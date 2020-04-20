@@ -15,11 +15,11 @@ def print_statistics(images, t_images, labels, t_labels):
         np.sum(t_labels==i)
     
 def hypothesis(images, labels):
-        ekspo = []
-        for i in range(np.unique(labels)):
-            sumo = theta[0]
-            for j in range(len(images.iloc[0])):
-                sumo += np.sum(theta[i+1]*images.iloc[:,i])
+    ekspo = []
+    for i in range(np.unique(labels)):
+        sumo = theta[0]
+        for j in range(len(images.iloc[0])):
+            sumo += np.sum(theta[i+1]*images.iloc[:,i])
         ekspo.append(np.exp(sumo))
     sumo = np.sum(ekspo)
     return ekspo/sumo
